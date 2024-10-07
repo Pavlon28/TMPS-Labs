@@ -1,4 +1,4 @@
-package Lab_0;
+package Lab_0.src;
 
 public class PayPalPayment implements Payment {
     @Override
