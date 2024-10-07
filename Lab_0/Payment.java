@@ -1,4 +1,5 @@
 package Lab_0;
 
-public class Payment {
+public interface Payment {
+    void pay(double amount);
 }
