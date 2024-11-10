@@ -11,8 +11,8 @@ public class LoggingDecorator implements Component {
 
     @Override
     public void execute() {
-        System.out.println("[Decorator] Logging before execution");
+        System.out.println("[LoggingDecorator] Starting execution...");
         wrappedComponent.execute();
-        System.out.println("[Decorator] Logging after execution");
+        System.out.println("[LoggingDecorator] Execution completed.");
     }
 }

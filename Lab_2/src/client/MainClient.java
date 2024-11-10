@@ -1,30 +1,19 @@
 package Lab_2.src.client;
 
-import Lab_2.src.domain.Component;
-import Lab_2.src.domain.TargetInterface;
-import Lab_2.src.models.ConcreteComponent;
-import Lab_2.src.models.LoggingDecorator;
-import Lab_2.src.utilities.Adapter;
-import Lab_2.src.utilities.Facade;
-import Lab_2.src.utilities.LegacySystem;
-import Lab_2.src.utilities.SubsystemA;
-import Lab_2.src.utilities.SubsystemB;
+import Lab_2.src.domain.UserProfile;
+import Lab_2.src.utilities.SystemFacade;
 
 public class MainClient {
     public static void main(String[] args) {
-        // Adapter Pattern demonstration
-        System.out.println("=== Adapter Pattern ===");
-        TargetInterface adapter = new Adapter(new LegacySystem());
-        adapter.performStandardAction();
+        SystemFacade facade = new SystemFacade();
 
-        // Decorator Pattern demonstration
-        System.out.println("\n=== Decorator Pattern ===");
-        Component component = new LoggingDecorator(new ConcreteComponent());
-        component.execute();
+        // Step 1: Initialize UserProfile using Adapter pattern
+        UserProfile user = facade.initializeUserProfile();
 
-        // Facade Pattern demonstration
-        System.out.println("\n=== Facade Pattern ===");
-        Facade facade = new Facade(new SubsystemA(), new SubsystemB());
-        facade.executeComplexOperation();
+        // Step 2: Perform user operation with Decorator pattern adding logging and validation
+        facade.performUserOperation(user);
+
+        // Step 3: Manage user session with additional subsystems using Facade pattern
+        facade.manageUserSession(user);
     }
 }

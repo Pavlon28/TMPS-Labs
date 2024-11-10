@@ -1,7 +1,11 @@
 package Lab_2.src.utilities;
 
 public class LegacySystem {
-    public void legacyAction() {
-        System.out.println("Action executed by LegacySystem");
+    public String getUserName() {
+        return "Legacy User";
+    }
+
+    public String getUserEmail() {
+        return "legacyuser@legacy.com";
     }
 }
