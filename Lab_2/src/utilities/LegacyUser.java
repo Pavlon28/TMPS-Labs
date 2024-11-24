@@ -1,6 +1,6 @@
 package Lab_2.src.utilities;
 
-public class LegacySystem {
+public class LegacyUser {
     public String getUserName() {
         return "Legacy User";
     }

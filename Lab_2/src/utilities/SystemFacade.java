@@ -12,7 +12,7 @@ public class SystemFacade {
     private final SubsystemB subsystemB;
 
     public SystemFacade() {
-        this.adapter = new Adapter(new LegacySystem());
+        this.adapter = new Adapter(new LegacyUser());
         this.subsystemA = new SubsystemA();
         this.subsystemB = new SubsystemB();
     }

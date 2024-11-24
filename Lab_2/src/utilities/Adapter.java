@@ -4,15 +4,15 @@ import Lab_2.src.domain.TargetInterface;
 import Lab_2.src.domain.UserProfile;
 
 public class Adapter implements TargetInterface {
-    private final LegacySystem legacySystem;
+    private final LegacyUser legacyUser;
 
-    public Adapter(LegacySystem legacySystem) {
-        this.legacySystem = legacySystem;
+    public Adapter(LegacyUser legacySystem) {
+        this.legacyUser = legacySystem;
     }
 
     public UserProfile adaptUserProfile() {
-        String name = legacySystem.getUserName();
-        String email = legacySystem.getUserEmail();
+        String name = legacyUser.getUserName();
+        String email = legacyUser.getUserEmail();
         System.out.println("Adapter creating UserProfile from legacy data...");
         return new UserProfile(name, email);
     }
